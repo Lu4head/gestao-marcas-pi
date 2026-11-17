@@ -1,0 +1,691 @@
+[
+  {
+    "prazo_id": "D01-VENCIDO",
+    "processo_id": "DEMO-D01-VENCIDO",
+    "data_referencia": "2026-11-17",
+    "data_limite": "2026-11-16",
+    "dias_restantes": -1,
+    "prioridade": "VENCIDO",
+    "motivos": [
+      "PRAZO_VENCIDO"
+    ],
+    "revisao_humana": true,
+    "regras_versao": "regras-v1",
+    "parametros": {
+      "margem_interna": 5,
+      "limiar_ml": 0.7
+    },
+    "ml": {
+      "schema_version": "1.0",
+      "prazo_id": "D01-VENCIDO",
+      "gerado_em": "2026-11-17T10:58:33.513301+00:00",
+      "modelo_versao": "logreg-sintetica-v1-6fd088eae9",
+      "status": "ok",
+      "prob_atraso": 0.0395018242017104
+    },
+    "aviso": null,
+    "fatos_iniciais": {
+      "concluido": false,
+      "dias_restantes": -1,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.0395018242017104
+    },
+    "fatos_finais": {
+      "concluido": false,
+      "dias_restantes": -1,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.0395018242017104,
+      "prazo_aberto": true,
+      "candidato_VENCIDO": true,
+      "motivo_PRAZO_VENCIDO": true,
+      "candidato_NORMAL": true
+    },
+    "trilha": [
+      {
+        "ciclo": 1,
+        "regra": "R2",
+        "descricao": "Aberto permite avaliar condições",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": -1,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.0395018242017104
+        },
+        "fatos_adicionados": {
+          "prazo_aberto": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "R3",
+        "descricao": "Aberto com data passada",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": -1,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.0395018242017104,
+          "prazo_aberto": true
+        },
+        "fatos_adicionados": {
+          "candidato_VENCIDO": true,
+          "motivo_PRAZO_VENCIDO": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "R8",
+        "descricao": "Aberto admite prioridade padrão",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": -1,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.0395018242017104,
+          "prazo_aberto": true,
+          "candidato_VENCIDO": true,
+          "motivo_PRAZO_VENCIDO": true
+        },
+        "fatos_adicionados": {
+          "candidato_NORMAL": true
+        }
+      },
+      {
+        "ciclo": 3,
+        "regra": "RESOLUCAO",
+        "descricao": "Precedência entre candidatos no ponto fixo",
+        "prioridade": "VENCIDO"
+      }
+    ]
+  },
+  {
+    "prazo_id": "D02-HOJE",
+    "processo_id": "DEMO-D02-HOJE",
+    "data_referencia": "2026-11-17",
+    "data_limite": "2026-11-17",
+    "dias_restantes": 0,
+    "prioridade": "URGENTE",
+    "motivos": [
+      "MARGEM_INTERNA"
+    ],
+    "revisao_humana": true,
+    "regras_versao": "regras-v1",
+    "parametros": {
+      "margem_interna": 5,
+      "limiar_ml": 0.7
+    },
+    "ml": {
+      "schema_version": "1.0",
+      "prazo_id": "D02-HOJE",
+      "gerado_em": "2026-11-17T10:58:33.517149+00:00",
+      "modelo_versao": "logreg-sintetica-v1-6fd088eae9",
+      "status": "ok",
+      "prob_atraso": 0.04444765679626158
+    },
+    "aviso": null,
+    "fatos_iniciais": {
+      "concluido": false,
+      "dias_restantes": 0,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.04444765679626158
+    },
+    "fatos_finais": {
+      "concluido": false,
+      "dias_restantes": 0,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.04444765679626158,
+      "prazo_aberto": true,
+      "candidato_URGENTE": true,
+      "motivo_MARGEM_INTERNA": true,
+      "candidato_NORMAL": true
+    },
+    "trilha": [
+      {
+        "ciclo": 1,
+        "regra": "R2",
+        "descricao": "Aberto permite avaliar condições",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 0,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.04444765679626158
+        },
+        "fatos_adicionados": {
+          "prazo_aberto": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "R4",
+        "descricao": "Aberto dentro da margem interna",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 0,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.04444765679626158,
+          "prazo_aberto": true
+        },
+        "fatos_adicionados": {
+          "candidato_URGENTE": true,
+          "motivo_MARGEM_INTERNA": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "R8",
+        "descricao": "Aberto admite prioridade padrão",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 0,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.04444765679626158,
+          "prazo_aberto": true,
+          "candidato_URGENTE": true,
+          "motivo_MARGEM_INTERNA": true
+        },
+        "fatos_adicionados": {
+          "candidato_NORMAL": true
+        }
+      },
+      {
+        "ciclo": 3,
+        "regra": "RESOLUCAO",
+        "descricao": "Precedência entre candidatos no ponto fixo",
+        "prioridade": "URGENTE"
+      }
+    ]
+  },
+  {
+    "prazo_id": "D03-MARGEM",
+    "processo_id": "DEMO-D03-MARGEM",
+    "data_referencia": "2026-11-17",
+    "data_limite": "2026-11-22",
+    "dias_restantes": 5,
+    "prioridade": "URGENTE",
+    "motivos": [
+      "MARGEM_INTERNA"
+    ],
+    "revisao_humana": true,
+    "regras_versao": "regras-v1",
+    "parametros": {
+      "margem_interna": 5,
+      "limiar_ml": 0.7
+    },
+    "ml": {
+      "schema_version": "1.0",
+      "prazo_id": "D03-MARGEM",
+      "gerado_em": "2026-11-17T10:58:33.519125+00:00",
+      "modelo_versao": "logreg-sintetica-v1-6fd088eae9",
+      "status": "ok",
+      "prob_atraso": 0.044476391068155284
+    },
+    "aviso": null,
+    "fatos_iniciais": {
+      "concluido": false,
+      "dias_restantes": 5,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.044476391068155284
+    },
+    "fatos_finais": {
+      "concluido": false,
+      "dias_restantes": 5,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.044476391068155284,
+      "prazo_aberto": true,
+      "candidato_URGENTE": true,
+      "motivo_MARGEM_INTERNA": true,
+      "candidato_NORMAL": true
+    },
+    "trilha": [
+      {
+        "ciclo": 1,
+        "regra": "R2",
+        "descricao": "Aberto permite avaliar condições",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 5,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.044476391068155284
+        },
+        "fatos_adicionados": {
+          "prazo_aberto": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "R4",
+        "descricao": "Aberto dentro da margem interna",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 5,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.044476391068155284,
+          "prazo_aberto": true
+        },
+        "fatos_adicionados": {
+          "candidato_URGENTE": true,
+          "motivo_MARGEM_INTERNA": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "R8",
+        "descricao": "Aberto admite prioridade padrão",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 5,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.044476391068155284,
+          "prazo_aberto": true,
+          "candidato_URGENTE": true,
+          "motivo_MARGEM_INTERNA": true
+        },
+        "fatos_adicionados": {
+          "candidato_NORMAL": true
+        }
+      },
+      {
+        "ciclo": 3,
+        "regra": "RESOLUCAO",
+        "descricao": "Precedência entre candidatos no ponto fixo",
+        "prioridade": "URGENTE"
+      }
+    ]
+  },
+  {
+    "prazo_id": "D04-RISCO",
+    "processo_id": "DEMO-D04-RISCO",
+    "data_referencia": "2026-11-17",
+    "data_limite": "2026-11-25",
+    "dias_restantes": 8,
+    "prioridade": "ALTO",
+    "motivos": [
+      "RISCO_ML_ACIMA_LIMIAR"
+    ],
+    "revisao_humana": true,
+    "regras_versao": "regras-v1",
+    "parametros": {
+      "margem_interna": 5,
+      "limiar_ml": 0.7
+    },
+    "ml": {
+      "schema_version": "1.0",
+      "prazo_id": "D04-RISCO",
+      "gerado_em": "2026-11-17T10:58:33.520893+00:00",
+      "modelo_versao": "logreg-sintetica-v1-6fd088eae9",
+      "status": "ok",
+      "prob_atraso": 0.8241107932764514
+    },
+    "aviso": null,
+    "fatos_iniciais": {
+      "concluido": false,
+      "dias_restantes": 8,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.8241107932764514
+    },
+    "fatos_finais": {
+      "concluido": false,
+      "dias_restantes": 8,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.8241107932764514,
+      "prazo_aberto": true,
+      "motivo_RISCO_ML_ACIMA_LIMIAR": true,
+      "candidato_NORMAL": true,
+      "candidato_ALTO": true
+    },
+    "trilha": [
+      {
+        "ciclo": 1,
+        "regra": "R2",
+        "descricao": "Aberto permite avaliar condições",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 8,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.8241107932764514
+        },
+        "fatos_adicionados": {
+          "prazo_aberto": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "R6",
+        "descricao": "Probabilidade válida atinge o limiar",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 8,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.8241107932764514,
+          "prazo_aberto": true
+        },
+        "fatos_adicionados": {
+          "motivo_RISCO_ML_ACIMA_LIMIAR": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "R8",
+        "descricao": "Aberto admite prioridade padrão",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 8,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.8241107932764514,
+          "prazo_aberto": true,
+          "motivo_RISCO_ML_ACIMA_LIMIAR": true
+        },
+        "fatos_adicionados": {
+          "candidato_NORMAL": true
+        }
+      },
+      {
+        "ciclo": 3,
+        "regra": "R7",
+        "descricao": "Risco ou ausência fora da urgência",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 8,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.8241107932764514,
+          "prazo_aberto": true,
+          "motivo_RISCO_ML_ACIMA_LIMIAR": true,
+          "candidato_NORMAL": true
+        },
+        "fatos_adicionados": {
+          "candidato_ALTO": true
+        }
+      },
+      {
+        "ciclo": 4,
+        "regra": "RESOLUCAO",
+        "descricao": "Precedência entre candidatos no ponto fixo",
+        "prioridade": "ALTO"
+      }
+    ]
+  },
+  {
+    "prazo_id": "D05-AUSENTE",
+    "processo_id": "DEMO-D05-AUSENTE",
+    "data_referencia": "2026-11-17",
+    "data_limite": "2026-11-29",
+    "dias_restantes": 12,
+    "prioridade": "ALTO",
+    "motivos": [
+      "RESPONSAVEL_AUSENTE"
+    ],
+    "revisao_humana": true,
+    "regras_versao": "regras-v1",
+    "parametros": {
+      "margem_interna": 5,
+      "limiar_ml": 0.7
+    },
+    "ml": {
+      "schema_version": "1.0",
+      "prazo_id": "D05-AUSENTE",
+      "gerado_em": "2026-11-17T10:58:33.522567+00:00",
+      "modelo_versao": "logreg-sintetica-v1-6fd088eae9",
+      "status": "ok",
+      "prob_atraso": 0.12935115037373687
+    },
+    "aviso": null,
+    "fatos_iniciais": {
+      "concluido": false,
+      "dias_restantes": 12,
+      "responsavel_ausente": true,
+      "ml_status": "ok",
+      "risco_ml": 0.12935115037373687
+    },
+    "fatos_finais": {
+      "concluido": false,
+      "dias_restantes": 12,
+      "responsavel_ausente": true,
+      "ml_status": "ok",
+      "risco_ml": 0.12935115037373687,
+      "prazo_aberto": true,
+      "motivo_RESPONSAVEL_AUSENTE": true,
+      "candidato_NORMAL": true,
+      "candidato_ALTO": true
+    },
+    "trilha": [
+      {
+        "ciclo": 1,
+        "regra": "R2",
+        "descricao": "Aberto permite avaliar condições",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 12,
+          "responsavel_ausente": true,
+          "ml_status": "ok",
+          "risco_ml": 0.12935115037373687
+        },
+        "fatos_adicionados": {
+          "prazo_aberto": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "R5",
+        "descricao": "Responsável ausente ou não designado",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 12,
+          "responsavel_ausente": true,
+          "ml_status": "ok",
+          "risco_ml": 0.12935115037373687,
+          "prazo_aberto": true
+        },
+        "fatos_adicionados": {
+          "motivo_RESPONSAVEL_AUSENTE": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "R8",
+        "descricao": "Aberto admite prioridade padrão",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 12,
+          "responsavel_ausente": true,
+          "ml_status": "ok",
+          "risco_ml": 0.12935115037373687,
+          "prazo_aberto": true,
+          "motivo_RESPONSAVEL_AUSENTE": true
+        },
+        "fatos_adicionados": {
+          "candidato_NORMAL": true
+        }
+      },
+      {
+        "ciclo": 3,
+        "regra": "R7",
+        "descricao": "Risco ou ausência fora da urgência",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 12,
+          "responsavel_ausente": true,
+          "ml_status": "ok",
+          "risco_ml": 0.12935115037373687,
+          "prazo_aberto": true,
+          "motivo_RESPONSAVEL_AUSENTE": true,
+          "candidato_NORMAL": true
+        },
+        "fatos_adicionados": {
+          "candidato_ALTO": true
+        }
+      },
+      {
+        "ciclo": 4,
+        "regra": "RESOLUCAO",
+        "descricao": "Precedência entre candidatos no ponto fixo",
+        "prioridade": "ALTO"
+      }
+    ]
+  },
+  {
+    "prazo_id": "D06-NORMAL",
+    "processo_id": "DEMO-D06-NORMAL",
+    "data_referencia": "2026-11-17",
+    "data_limite": "2026-12-17",
+    "dias_restantes": 30,
+    "prioridade": "NORMAL",
+    "motivos": [
+      "SEM_GATILHOS_DE_ELEVACAO"
+    ],
+    "revisao_humana": true,
+    "regras_versao": "regras-v1",
+    "parametros": {
+      "margem_interna": 5,
+      "limiar_ml": 0.7
+    },
+    "ml": {
+      "schema_version": "1.0",
+      "prazo_id": "D06-NORMAL",
+      "gerado_em": "2026-11-17T10:58:33.524322+00:00",
+      "modelo_versao": "logreg-sintetica-v1-6fd088eae9",
+      "status": "ok",
+      "prob_atraso": 0.011125472049268524
+    },
+    "aviso": null,
+    "fatos_iniciais": {
+      "concluido": false,
+      "dias_restantes": 30,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.011125472049268524
+    },
+    "fatos_finais": {
+      "concluido": false,
+      "dias_restantes": 30,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.011125472049268524,
+      "prazo_aberto": true,
+      "candidato_NORMAL": true
+    },
+    "trilha": [
+      {
+        "ciclo": 1,
+        "regra": "R2",
+        "descricao": "Aberto permite avaliar condições",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 30,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.011125472049268524
+        },
+        "fatos_adicionados": {
+          "prazo_aberto": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "R8",
+        "descricao": "Aberto admite prioridade padrão",
+        "fatos_consultados": {
+          "concluido": false,
+          "dias_restantes": 30,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.011125472049268524,
+          "prazo_aberto": true
+        },
+        "fatos_adicionados": {
+          "candidato_NORMAL": true
+        }
+      },
+      {
+        "ciclo": 3,
+        "regra": "RESOLUCAO",
+        "descricao": "Precedência entre candidatos no ponto fixo",
+        "prioridade": "NORMAL"
+      }
+    ]
+  },
+  {
+    "prazo_id": "D07-CONCLUIDO",
+    "processo_id": "DEMO-D07-CONCLUIDO",
+    "data_referencia": "2026-11-17",
+    "data_limite": "2026-11-07",
+    "dias_restantes": -10,
+    "prioridade": "FORA_DA_FILA",
+    "motivos": [
+      "CONCLUIDO"
+    ],
+    "revisao_humana": false,
+    "regras_versao": "regras-v1",
+    "parametros": {
+      "margem_interna": 5,
+      "limiar_ml": 0.7
+    },
+    "ml": {
+      "schema_version": "1.0",
+      "prazo_id": "D07-CONCLUIDO",
+      "gerado_em": "2026-11-17T10:58:33.526010+00:00",
+      "modelo_versao": "logreg-sintetica-v1-6fd088eae9",
+      "status": "ok",
+      "prob_atraso": 0.21744925162241566
+    },
+    "aviso": null,
+    "fatos_iniciais": {
+      "concluido": true,
+      "dias_restantes": -10,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.21744925162241566
+    },
+    "fatos_finais": {
+      "concluido": true,
+      "dias_restantes": -10,
+      "responsavel_ausente": false,
+      "ml_status": "ok",
+      "risco_ml": 0.21744925162241566,
+      "candidato_FORA_DA_FILA": true,
+      "motivo_CONCLUIDO": true
+    },
+    "trilha": [
+      {
+        "ciclo": 1,
+        "regra": "R1",
+        "descricao": "Concluído sai da fila",
+        "fatos_consultados": {
+          "concluido": true,
+          "dias_restantes": -10,
+          "responsavel_ausente": false,
+          "ml_status": "ok",
+          "risco_ml": 0.21744925162241566
+        },
+        "fatos_adicionados": {
+          "candidato_FORA_DA_FILA": true,
+          "motivo_CONCLUIDO": true
+        }
+      },
+      {
+        "ciclo": 2,
+        "regra": "RESOLUCAO",
+        "descricao": "Precedência entre candidatos no ponto fixo",
+        "prioridade": "FORA_DA_FILA"
+      }
+    ]
+  }
+]

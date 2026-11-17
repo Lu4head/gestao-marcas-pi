@@ -1,0 +1,82 @@
+{
+  "origem": "SINTETICO",
+  "modelo_versao": "logreg-sintetica-v1-6fd088eae9",
+  "particoes": {
+    "treino": {
+      "n": 2133,
+      "processos": 716,
+      "inicio_t0": "2019-01-01",
+      "fim_t0": "2022-12-03",
+      "fim_desfecho": "2022-12-10",
+      "suporte": {
+        "0": 1543,
+        "1": 590
+      }
+    },
+    "validacao": {
+      "n": 687,
+      "processos": 235,
+      "inicio_t0": "2022-12-11",
+      "fim_t0": "2024-03-29",
+      "fim_desfecho": "2024-04-03",
+      "suporte": {
+        "0": 516,
+        "1": 171
+      }
+    },
+    "teste": {
+      "n": 720,
+      "processos": 240,
+      "inicio_t0": "2024-04-04",
+      "fim_t0": "2025-07-28",
+      "fim_desfecho": "2025-09-01",
+      "suporte": {
+        "0": 494,
+        "1": 226
+      }
+    }
+  },
+  "purga": {
+    "treino": 27,
+    "validacao": 33
+  },
+  "limiar_validacao": 0.24999999999999997,
+  "comparacao": {
+    "dummy_majoritario": {
+      "limiar": 0.24999999999999997,
+      "suporte": {
+        "0": 494,
+        "1": 226
+      },
+      "TN": 494,
+      "FP": 0,
+      "FN": 226,
+      "TP": 0,
+      "precision": null,
+      "recall": 0.0,
+      "f1": 0.0,
+      "average_precision": 0.3138888888888889,
+      "brier": 0.3138888888888889,
+      "acuracia": 0.6861111111111111,
+      "fracao_alertas": 0.0
+    },
+    "regressao_logistica": {
+      "limiar": 0.24999999999999997,
+      "suporte": {
+        "0": 494,
+        "1": 226
+      },
+      "TN": 329,
+      "FP": 165,
+      "FN": 53,
+      "TP": 173,
+      "precision": 0.5118343195266272,
+      "recall": 0.7654867256637168,
+      "f1": 0.6134751773049646,
+      "average_precision": 0.6715076426958144,
+      "brier": 0.16236793026299207,
+      "acuracia": 0.6972222222222222,
+      "fracao_alertas": 0.46944444444444444
+    }
+  }
+}

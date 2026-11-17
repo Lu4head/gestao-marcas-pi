@@ -1,0 +1,94 @@
+[
+  {
+    "title": "Gestão de Marcas",
+    "kind": "cover",
+    "body": [
+      "Priorização de prazos com IA e ML",
+      "Projeto Integrador · Ciência da Computação · 2026"
+    ],
+    "note": "00:00–00:30 · Apresentador 1. Protótipo acadêmico com dados sintéticos; explicar o objetivo."
+  },
+  {
+    "title": "Priorização de providências",
+    "kind": "text",
+    "body": [
+      "Datas conferidas definem urgências",
+      "O ML estima risco no instante t0",
+      "As regras geram uma fila explicável",
+      "A decisão continua humana"
+    ],
+    "note": "00:30–02:00 · Apresentador 1. Fonte: Marco2_Documento_Padrao_Entrega-1.docx, seções 1 e 2. Consulta RPI humana; sem integração INPI. Tema antigo Olist abandonado."
+  },
+  {
+    "title": "Arquitetura do agente",
+    "kind": "architecture",
+    "body": [],
+    "note": "02:00–03:30 · Apresentador 1. Diagrama conceitual dos dez módulos do Marco 2; os fluxos foram preservados. MVP: CSV/objetos, Python e Streamlit; sem API, autenticação ou banco de produção. Fonte: Marco2_Documento_Padrao_Entrega-1.docx, seção 1.2; src/."
+  },
+  {
+    "title": "Fatos e regras de produção",
+    "kind": "rules",
+    "body": [],
+    "note": "03:30–05:00 · Apresentador 1. Prazo aberto e risco elevado derivam fatos em ciclos diferentes. A agenda chega a ponto fixo antes de resolver prioridade. Motivos adicionais ficam registrados. Fonte: src/ia/engine.py; docs/demo_ml.json."
+  },
+  {
+    "title": "Contrato ML e IA",
+    "kind": "contract",
+    "body": [],
+    "note": "05:00–06:00 · Apresentador 1. JSON real desta execução: docs/demo_ml.json, D04-RISCO. predict_proba do modelo carregado alimenta fato risco_ml; R6 deriva motivo, R7 deriva ALTO. Falha: indisponivel/null. Nenhuma data se altera."
+  },
+  {
+    "title": "Dados sintéticos e avaliação",
+    "kind": "data",
+    "body": [],
+    "note": "06:00–08:00 · Apresentador 2. Fonte: docs/metricas.json e src/data/synthetic.py. 3.600 prazos de 1.200 processos. Gerador logístico com ruído favorece logística; sem validade real. Features t0: dias, carga, ausência, ato e situação; IDs fora. Partição temporal por processo, purga de 60 desfechos, fit apenas no treino. Referência técnica: https://scikit-learn.org/stable/common_pitfalls.html"
+  },
+  {
+    "title": "Demonstração funcional",
+    "kind": "text",
+    "body": [
+      "Vencidos, urgentes e fronteira de 5 dias",
+      "D04: predição real e trilha R2 / R6 / R7",
+      "ML desligado: indisponível e regras ativas",
+      "Ausência, normal e concluído fora da fila",
+      "Conclusão humana simulada e evidência JSON"
+    ],
+    "note": "08:00–13:00 · Apresentador 1 até 10:30; Apresentador 2 até 13:00. Abrir painel; referência 17/11/2026, margem 5, limiar 0,70. Seguir ROTEIRO_20_MIN.md. Fonte: src/data/demo.py e docs/demo_ml.json."
+  },
+  {
+    "title": "Resultados no teste sintético",
+    "kind": "metrics",
+    "body": [],
+    "note": "13:00–14:30 · Apresentador 2. Fonte: docs/metricas.json. Limiar 0,25 escolhido na validação por F2 e orçamento ilustrativo de 45% de alertas. No teste, alertas 46,9%. Dummy precision não calculável por zero positivos previstos. AP usa average_precision_score. Resultados apenas sintéticos."
+  },
+  {
+    "title": "Erros e escolha do limiar",
+    "kind": "confusion",
+    "body": [],
+    "note": "14:30–16:00 · Apresentador 2. Fonte: docs/metricas.json. 173 TP, 165 FP, 53 FN, 329 TN no limiar 0,25. Comparar precision/recall com 0,70, o padrão inicial da interface. Regras+ML no teste sintético aumenta recall e também a carga de revisão. Não inferir redução de atrasos."
+  },
+  {
+    "title": "Limitações e ética",
+    "kind": "text",
+    "body": [
+      "Métricas restritas à simulação",
+      "Falsos alertas e riscos não detectados",
+      "Dependência de conferência humana",
+      "Probabilidade t0; sem reavaliação diária",
+      "Sem validação operacional ou jurídica"
+    ],
+    "note": "16:00–18:00 · Apresentador 1. Fonte: docs/LIMITACOES_ETICA.md. Sem WebSystem/INPI real; datas imutáveis; conclusão simulada; não apresentar homologação inexistente."
+  },
+  {
+    "title": "Próximos passos",
+    "kind": "text",
+    "body": [
+      "Coleta de snapshots e desfechos reais",
+      "Validação temporal e calibração",
+      "Comparação com as regras e carga da equipe",
+      "Definição de parâmetros com responsáveis",
+      "Integração ao WebSystem após validação"
+    ],
+    "note": "18:00–20:00 · Apresentador 2. Plano futuro, não resultado entregue. Coletar histórico com rótulos maduros e governança; avaliar benefício sobre controle determinístico antes da adoção. Reservar 10 minutos para perguntas."
+  }
+]

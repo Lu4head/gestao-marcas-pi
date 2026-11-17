@@ -1,0 +1,9 @@
+{
+  "modelo_versao": "logreg-sintetica-v1-c236c48a74",
+  "origem": "SINTETICO",
+  "arquivo": "modelo_sintetico.joblib",
+  "sha256": "3c05e05b45ad3857e1f3c3c1f5edb7855dd80435c970342fc42129d1453d5bb5",
+  "sklearn": "1.8.0",
+  "limiar_validacao": 0.24999999999999997,
+  "gerado_em": "2026-11-17T12:32:15.505471+00:00"
+}
